@@ -14,6 +14,26 @@
     </Window.SystemBackdrop>
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
+        <!-- Toolbar -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Padding="8,6" Spacing="4">
+            <Button x:Name="OpenButton" Click="OpenButton_Click" Content="열기"/>
+            <AppBarSeparator/>
+            <Button x:Name="PrevButton" Click="PrevButton_Click" Content="&#xe76b;" FontFamily="Segoe MDL2 Assets"
+                    IsEnabled="False" ToolTipService.ToolTip="이전 페이지"/>
+            <TextBlock x:Name="PageInfoText" VerticalAlignment="Center" Margin="8,0" MinWidth="60" TextAlignment="Center"/>
+            <Button x:Name="NextButton" Click="NextButton_Click" Content="&#xe76c;" FontFamily="Segoe MDL2 Assets"
+                    IsEnabled="False" ToolTipService.ToolTip="다음 페이지"/>
+        </StackPanel>
+
+        <!-- PDF View -->
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"
+                      HorizontalScrollMode="Enabled" VerticalScrollMode="Enabled">
+            <Image x:Name="PdfPageImage" Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="16"/>
+        </ScrollViewer>
     </Grid>
 </Window>
