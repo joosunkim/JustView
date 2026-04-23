@@ -14,6 +14,32 @@
     </Window.SystemBackdrop>
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
+        <!-- Toolbar -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Padding="8,6" Spacing="4">
+            <Button x:Name="OpenButton" Click="OpenButton_Click" Content="열기"/>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="6" Margin="12,0">
+                <TextBox x:Name="PageNumberBox" Width="48" TextAlignment="Center"
+                         KeyDown="PageNumberBox_KeyDown" GotFocus="PageNumberBox_GotFocus"
+                         LostFocus="PageNumberBox_LostFocus"
+                         TextChanging="PageNumberBox_TextChanging" IsEnabled="False"/>
+                <TextBlock Text="/" VerticalAlignment="Center"/>
+                <TextBlock x:Name="TotalPagesText" VerticalAlignment="Center"/>
+            </StackPanel>
+        </StackPanel>
+
+        <!-- PDF Continuous Scroll View -->
+        <ScrollViewer x:Name="PageScrollViewer" Grid.Row="1"
+                      HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"
+                      HorizontalScrollMode="Enabled" VerticalScrollMode="Enabled"
+                      IsTabStop="True"
+                      ViewChanging="PageScrollViewer_ViewChanging"
+                      ViewChanged="PageScrollViewer_ViewChanged">
+            <StackPanel x:Name="PagesPanel" Spacing="8" Padding="16" HorizontalAlignment="Center"/>
+        </ScrollViewer>
     </Grid>
 </Window>
