@@ -30,6 +30,16 @@ Windows 전용 PDF 뷰어. WinUI 3 + C# 기반.
 - 기능과 완성도를 함께 고려 (실사용 가능한 수준)
 - 추후 Mac / Linux 확장 가능성 염두에 두되 지금은 Windows만 집중
 
+## 브랜치 전략
+- GitHub Flow 사용: `main`은 항상 동작하는 상태 유지
+- 모든 작업은 feature 브랜치에서 진행 → PR → `main` merge
+- 브랜치 네이밍: `feature/기능명`, `fix/버그명`, `chore/작업명`
+- 기능 단위 브랜치 목록:
+  - `feature/pdf-open` — 파일 열기, 기본 렌더링
+  - `feature/zoom-controls` — 확대/축소, 너비/페이지 맞춤
+  - `feature/dual-page-view` — 2페이지 보기 모드
+  - `feature/text-search` — 텍스트 검색
+
 ## 커밋 컨벤션
 - Conventional Commits 형식 사용
 - prefix는 영어, 내용은 한국어
