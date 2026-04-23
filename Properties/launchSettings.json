@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "JustView (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "JustView (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
